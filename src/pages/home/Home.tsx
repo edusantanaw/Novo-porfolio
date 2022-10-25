@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import {Moon} from "../../components/Moon";
+import {Moon} from "../../components/moon/Moon";
 import { Paragraph } from "../../styles/Global";
 
 export const Home: React.FC = () => {

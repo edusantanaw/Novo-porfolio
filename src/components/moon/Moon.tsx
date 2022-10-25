@@ -1,6 +1,6 @@
-import Circus from "./moon/Circus";
-import Half1 from "./moon/Half1";
-import Half2 from "./moon/Half2";
+import Circus from "./Circus";
+import Half1 from "./Half1";
+import Half2 from "./Half2";
 import styled from "styled-components";
 
 type len = {

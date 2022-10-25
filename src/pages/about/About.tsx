@@ -1,9 +1,12 @@
 import { Container } from "./styles";
 import { Title } from "../../styles/Global";
 import { Paragraph } from "../../styles/Global";
+import me from '../../assets/me.png'
+
 export default function About() {
   return (
     <Container>
+      <div>
       <Title>Sobre mim</Title>
       <Paragraph>
         Eu sou o Eduardo, tenho 19 anos e atualmente estou cursando analise e
@@ -19,6 +22,8 @@ export default function About() {
         <Paragraph><span>Idade</span>: 19 Anos</Paragraph>
         <Paragraph><span>Status</span>: Disponivel para uma primeira oportunidade!</Paragraph>
       </div>
+      </div>
+      <img src={me} alt="foto de eduardo santana" />
     </Container>
   );
 }
