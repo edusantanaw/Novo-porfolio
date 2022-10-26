@@ -2,56 +2,93 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const Card = styled.div`
-  width: 33%;
+  width: 48%;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
   img {
     width: 100%;
-    height: 15em;
+    height: 20em;
     border-radius: 5px;
-    transition: 0.6s ease-in-out;
+    transition: 0.5s ease-in-out;
+    transition-delay: 0.1s;
+    object-fit: cover;
   }
   .details {
     display: flex;
     width: 100%;
     height: 100%;
-    background: #f0544f;
+    background: #000000e8;
     color: #fff;
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 2px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
     opacity: 0;
-    transition: 0.6s ease-in-out;
+    transition: 0.5s ease-in-out;
     transform: translate3d(0%, 90%, 0);
     h2 {
-      left: 2;
       font-size: 2em;
+      text-align:center;
+      color: ${props => props.theme.colors.primary};
+      letter-spacing: 1.2px;
+    }
+    p{
+      margin-top: 0.5em;
+      font-size: 1.1em;
+      color: ${props => props.theme.colors.secundary};
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 1.5px;
     }
     a {
       font-size: 1.2em;
-      padding: 0.5em;
-      width: 100%;
+      font-weight: 500;
+      padding: 0.6em;
       border: none;
-      border-radius: 5px;
+      border-radius: 4px;
       background-color: #fff;
       text-decoration: none;
-      color: #000;
+      color: ${(props) => props.theme.colors.primary};
       width: 100%;
       text-align: center;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        background-color: #1a191c;
+        color: #fff;
+      }
     }
   }
   #animate {
+    transition-delay: 0.1s;
     opacity: 1;
     transform: translate3d(0%, 0%, 0);
   }
   &:hover {
     img {
-      scale: 1.3;
+      scale: 1.1;
+    }
+  }
+  @media (max-width: 1000px){
+    img{
+      height: 15em;
+    }
+  }
+
+  @media (max-width: 800px){
+    width: 100%;
+
+    img{
+      height: 20em;
+    }
+  }
+
+  @media (max-width: 500px){
+    img{
+      height: 16em;
     }
   }
 `;
@@ -61,9 +98,10 @@ interface Card {
   img: string;
   title: string;
   link: string;
+  details: string;
 }
 
-export default function ProjectCard({ alt, img, title, link }: Card) {
+export default function ProjectCard({ alt, img, title, link, details }: Card) {
   const [animate, setAnimate] = useState<Boolean>(false);
 
   return (
@@ -73,7 +111,10 @@ export default function ProjectCard({ alt, img, title, link }: Card) {
     >
       <img src={img} alt={alt} />
       <div className="details" id={animate ? "animate" : "remove"}>
-        <h2>{title}</h2>
+        <div>
+          <h2>{title}</h2>
+          <p>{details}</p>
+        </div>
         <a href={link}>Ver Projeto</a>
       </div>
     </Card>

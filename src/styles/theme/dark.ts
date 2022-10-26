@@ -1,7 +1,7 @@
 export default {
   title: "dark",
   colors: {
-    primary: "#fff",
+    primary: "#a019a0",
     secundary: "#ECE6E6" ,
     weight: "300",
     span: "400",

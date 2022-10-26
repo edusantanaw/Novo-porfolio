@@ -10,16 +10,20 @@ export const Global = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         background: ${(props) => props.theme.colors.background};
     }
+    html{
+      scroll-behavior: smooth;
+    }
 `;
 
 export const Title = styled.h2`
   color: ${(props) => props.theme.colors.primary};
   font-size: 3em;
+
 `;
 
 export const Paragraph = styled.p`
   color: ${(props) => props.theme.colors.secundary};
   font-size: 1.3em;
-  font-weight: ${props => props.theme.colors.weight};
+  font-weight: ${(props) => props.theme.colors.weight};
   letter-spacing: 1.4px;
 `;

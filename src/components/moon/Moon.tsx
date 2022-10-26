@@ -19,9 +19,21 @@ color: ${props=> props.theme.colors.primary};
   }
 
   .invert{
-    transform: rotate(270deg);
-    filter: drop-shadow(-2px 1px 6px ${props=> props.theme.colors.primary} );
+    transform: rotate(270deg)
   }
+  @media (max-width: 960px){
+    width: 100%;
+    flex-direction:row;
+    justify-content: space-between;
+    svg{
+      transform: rotate(360deg);
+    }
+
+    .invert{
+      transform: rotate(180deg);
+    }
+  }
+
 `;
 
 export const Moon = ({ width, height }: len) => {

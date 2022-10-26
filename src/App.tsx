@@ -12,7 +12,7 @@ import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Project from "./pages/projects/Projects";
-import Skill from "./pages/skills/Skils";
+import Footer from "./pages/footer/Footer";
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', dark)
@@ -28,8 +28,8 @@ function App() {
       <Home />
       <About />
       <Project />
-      <Skill />
       <Contact />
+      <Footer />
     </ThemeProvider>
   );
 }
