@@ -10,7 +10,7 @@ export const Container = styled.header`
   padding: 1.5em 9%;
   position: fixed;
   z-index: 4;
-  #menu{
+  #menu {
     display: none;
   }
   div {
@@ -22,6 +22,9 @@ export const Container = styled.header`
     gap: 2em;
     display: flex;
     align-items: center;
+    svg{
+      display: none;
+    }
     li {
       padding: 0.1em;
       list-style: none;
@@ -30,7 +33,7 @@ export const Container = styled.header`
       position: relative;
       cursor: pointer;
     }
-    a{
+    a {
       text-decoration: none;
       color: ${(props) => props.theme.colors.primary};
     }
@@ -53,7 +56,7 @@ export const Container = styled.header`
     font-weight: bold;
   }
 
-  #close{
+  #close {
     font-size: 2.5em;
     position: absolute;
     top: 0.5em;
@@ -61,32 +64,53 @@ export const Container = styled.header`
     cursor: pointer;
   }
 
-  @media (max-width: 650px){
-   padding: 0.5em 9%;
-    ul{
+  @media (max-width: 650px) {
+    padding: 0.5em 9%;
+    ul {
       display: none;
+
+      svg{
+      display: block;
     }
-    #menu{
+  }
+    #menu {
       display: block;
       font-size: 2.5em;
       cursor: pointer;
+      animation-name: menu;
+      animation-duration: 1s;
+      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);   
     }
 
-    .show{
+    .show {
       display: flex;
       flex-direction: column;
       width: 50%;
       height: 100vh;
-      background-color: ${ props => props.theme.title === 'light' ? '#545677'  : '#02010A'};
+      background-color: ${(props) =>
+        props.theme.title === "light" ? "#545677" : "#02010A"};
       box-shadow: 1px 1px 3px 1px #fff;
       position: fixed;
       top: 0;
       left: 50%;
       padding: 2em;
+      transition: 0.2s;
       align-items: flex-start;
-      a{
+      animation-name: menu;
+      animation-duration: 1s;
+      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);     
+      a {
         font-size: 1.4em;
       }
+    }
+  }
+
+  @keyframes menu {
+    from {
+      transform: translate3d(100%, 0%, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
     }
   }
 `;

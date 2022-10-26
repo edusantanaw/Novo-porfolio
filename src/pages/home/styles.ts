@@ -28,7 +28,7 @@ export const Container = styled.section`
         font-weight: bold;
         transition: 0.4s ease-in-out;
         &:hover{
-            background-color: #fff;
+            background-color: ${props => props.theme.title === "light" ?  '#000' : '#fff'};
             color: ${props => props.theme.colors.primary}
         }
 
