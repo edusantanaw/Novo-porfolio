@@ -10,6 +10,7 @@ export const Container = styled.section`
   p {
     margin-top: 1em;
     max-width: 30em;
+    font-weight: 500;
   }
   .infos {
     margin-top: 2em;
@@ -24,8 +25,9 @@ export const Container = styled.section`
 
   img {
     height: 70%;
-    filter: saturate(0);
+    filter: ${props=> props.theme.title === "dark" ? 'saturate(0)' : "saturate(0.8)"};
     border-radius: 5px;
+    background-color: ${props => props.theme.title ===  'dark' ? '' : 'rgba(0, 0, 0, 0.8)'};
   }
 
   @media (max-width: 1100px){

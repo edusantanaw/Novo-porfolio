@@ -39,7 +39,7 @@ const Card = styled.div`
     p{
       margin-top: 0.5em;
       font-size: 1.1em;
-      color: ${props => props.theme.colors.secundary};
+      color: #fff;
       text-align: center;
       font-weight: 300;
       letter-spacing: 1.5px;

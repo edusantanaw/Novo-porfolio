@@ -22,13 +22,13 @@ export const Container = styled.section`
         background-color: ${props => props.theme.colors.primary};
         padding: 0.9em 6em;
         border-radius: 5px;
-        border: none;
+        border: 1px solid #000;
         text-decoration: none;
         color: #fff;
         font-weight: bold;
         transition: 0.4s ease-in-out;
         &:hover{
-            background-color: ${props => props.theme.title === "light" ?  '#000' : '#fff'};
+            background-color: ${props => props.theme.title === "light" ?  '#fff' : '#fff'};
             color: ${props => props.theme.colors.primary}
         }
 

@@ -7,7 +7,7 @@ export const Global = createGlobalStyle`
         box-sizing: border-box;
     }
     body{
-        font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
         background: ${(props) => props.theme.colors.background};
     }
     html{

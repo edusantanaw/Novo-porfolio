@@ -29,14 +29,16 @@ export const Container = styled.header`
       padding: 0.1em;
       list-style: none;
       font-size: 1.1em;
-      font-weight: bold;
+      font-weight: 500;
       position: relative;
       cursor: pointer;
+
+      a:hover {
+        transition: 0.3s;
+        color: ${(props) => props.theme.colors.primary};
+      }
     }
-    a {
-      text-decoration: none;
-      color: ${(props) => props.theme.colors.primary};
-    }
+   
     li::after {
       content: " ";
       width: 0%;
@@ -49,19 +51,43 @@ export const Container = styled.header`
     }
     li:hover::after {
       width: 100%;
+      
     }
   }
   h1 {
     font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
+    text-decoration: none;
+    color: ${(props) => props.theme.colors.primary}
   }
-
+  a {
+      text-decoration: none;
+      color: ${props=> props.theme.title === "dark" ? '#fff' : props.theme.colors.secundary};
+    }
   #close {
     font-size: 2.5em;
     position: absolute;
     top: 0.5em;
     left: 80%;
     cursor: pointer;
+  }
+  .theme_switcher{
+    position: absolute;
+    right: 0;
+    margin-top: 5em;
+    background-color:${props => props.theme.colors.secundary};
+    width:3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    transition: 0.6s;
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+    svg{
+      font-size: 1.9em;
+      color: ${props=> props.theme.title === "light" ? '#fff' : props.theme.colors.primary}
+    }
   }
 
   @media (max-width: 650px) {
@@ -81,6 +107,7 @@ export const Container = styled.header`
       animation-duration: 1s;
       animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);   
     }
+    
 
     .show {
       display: flex;

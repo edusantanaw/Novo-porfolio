@@ -10,12 +10,13 @@ type len = {
 
 const Container = styled.div`
 display:flex;
+margin-top: 2em;
 flex-direction: column;
 gap: 0.5em;
-color: ${props=> props.theme.colors.primary};
+color: ${props=> props.theme.title === "dark" ? '#fff' : props.theme.colors.secundary};
   svg {
     transform: rotate(90deg);
-    filter: drop-shadow(2px -1px  6px ${props=> props.theme.colors.primary} );
+    filter: drop-shadow(2px -1px  6px ${props=> props.theme.title === "dark" ? '#fff' : props.theme.colors.secundary} );
   }
 
   .invert{
